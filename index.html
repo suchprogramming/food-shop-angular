@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en" ng-app="foodShop">
+<head>
+  <meta charset="UTF-8">
+  <title>Food Shop</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0/angular.min.js"></script>
+  <script src="app.js"></script>
+  <script src="controllers/IceCreamController.js"></script>
+  <script src="controllers/PizzaController.js"></script>
+  <script src="services/FoodFactory.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/style.css" media="screen" title="no title" charset="utf-8">
+</head>
+<body>
+  <div class="container">
+    <div class="nav">
+      <h2>Welcome to Food Shop</h2>
+      <h4>Pizza & Ice Cream</h4>
+    </div>
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-3">
+        <div class="inner-col">
+          <div ng-controller="IceCreamCtrl">
+            <h4>Ice Cream Flavors</h4>
+            <ul>
+              <li ng-repeat="item in iceCreamOptions">
+                <a ng-click="addIceCream(item)"> {{item.name}} </a> ${{item.price}}
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="inner-col">
+          <div ng-controller="PizzaCtrl">
+            <h4>Pizza</h4>
+            <ul>
+              <li ng-repeat="item in pizzaOptions">
+                <a ng-click="addPizza(item)"> {{item.name}} </a> ${{item.price}}
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-3">
+        <div class="inner-col">
+          <h4>Ice Cream Cost:</h4>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="inner-col">
+          <h4>Pizza Cost:</h4>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
