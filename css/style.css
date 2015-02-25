@@ -8,3 +8,9 @@
   border-bottom: 1px solid grey;
   margin-bottom: 20px;
 }
+a.list-group-item:hover {
+  color: #fff;
+  background-color: #337ab7;
+  border-color: #337ab7;
+  cursor: pointer;
+}

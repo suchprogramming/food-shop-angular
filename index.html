@@ -24,11 +24,11 @@
         <div class="inner-col">
           <div ng-controller="IceCreamCtrl">
             <h4>Ice Cream Flavors</h4>
-            <ul>
-              <li ng-repeat="item in iceCreamOptions">
-                <a ng-click="addIceCream(item)"> {{item.name}} </a> ${{item.price}}
-              </li>
-            </ul>
+            <div class="list-group" ng-repeat="item in iceCreamOptions">
+              <a ng-click="FoodFactory.addIceCream(item)" class="list-group-item"> {{item.name}} ${{item.price}} </a>
+            </div>
+            <h4>Ice Cream Cost:</h4>
+            <h4>${{iceTotal()}}</h4>
           </div>
         </div>
       </div>
@@ -36,24 +36,12 @@
         <div class="inner-col">
           <div ng-controller="PizzaCtrl">
             <h4>Pizza</h4>
-            <ul>
-              <li ng-repeat="item in pizzaOptions">
-                <a ng-click="addPizza(item)"> {{item.name}} </a> ${{item.price}}
-              </li>
-            </ul>
+            <div class="list-group" ng-repeat="item in pizzaOptions">
+              <a ng-click="FoodFactory.addPizza(item)" class="list-group-item"> {{item.name}} ${{item.price}} </a>
+            </div>
+            <h4>Pizza Cost:</h4>
+            <h4>${{pizzaTotal()}}</h4>
           </div>
-        </div>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-md-3">
-        <div class="inner-col">
-          <h4>Ice Cream Cost:</h4>
-        </div>
-      </div>
-      <div class="col-md-3">
-        <div class="inner-col">
-          <h4>Pizza Cost:</h4>
         </div>
       </div>
     </div>
