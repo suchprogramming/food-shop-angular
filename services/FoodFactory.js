@@ -6,8 +6,13 @@ foodShop.factory('FoodFactory', function FoodFactory() {
  factory.pizzaItems = [];
  var pizzaTotal = null;
 
+ var pCounter = 0;
+ var iCounter = 0;
+
+ var finalTotal = null;
+
  factory.iceCreamOptions = [
- { name: "Chocolate", price: 2.49 },
+ { name: "Chocolate", price: 2.50 },
  { name: "Cookies & Cream", price: 3.59 },
  { name: "Rocky Road", price: 2.29 },
  { name: "Mint", price: 2.19 },
@@ -15,7 +20,7 @@ foodShop.factory('FoodFactory', function FoodFactory() {
  ];
 
  factory.pizzaOptions = [
- { name: "Pepperoni", price: 10.50 },
+ { name: "Pepperoni", price: 10.00 },
  { name: "Cheese", price: 8.50 },
  { name: "Chicken Garlic", price: 13.50 },
  { name: "Pineapple", price: 13.50 },
@@ -24,12 +29,14 @@ foodShop.factory('FoodFactory', function FoodFactory() {
 
  factory.addPizza = function(item) {
    factory.pizzaItems.push(item);
-   pizzaTotal += factory.pizzaItems[0].price;
+   pizzaTotal += factory.pizzaItems[pCounter].price;
+   pCounter += 1;
  };
 
  factory.addIceCream = function(item) {
    factory.iceCreamItems.push(item);
-   iceTotal += factory.iceCreamItems[0].price;
+   iceTotal += factory.iceCreamItems[iCounter].price;
+   iCounter += 1;
  };
 
  factory.getIceTotal = function() {
@@ -47,5 +54,6 @@ foodShop.factory('FoodFactory', function FoodFactory() {
      return pizzaTotal.toFixed(2);
    }
  };
+
  return factory;
 });

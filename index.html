@@ -14,7 +14,7 @@
 <body>
   <div class="container">
     <div class="nav">
-      <h2>Welcome to Food Shop</h2>
+      <h2>Welcome to Food Shop!</h2>
       <h4>Pizza & Ice Cream</h4>
     </div>
   </div>
@@ -23,9 +23,9 @@
       <div class="col-md-3">
         <div class="inner-col">
           <div ng-controller="IceCreamCtrl">
-            <h4>Ice Cream Flavors</h4>
-            <div class="list-group" ng-repeat="item in iceCreamOptions">
-              <a ng-click="FoodFactory.addIceCream(item)" class="list-group-item"> {{item.name}} ${{item.price}} </a>
+            <h4><span class="label label-default">Ice Cream Flavors</span></h4><br>
+            <div class="list-group">
+              <a ng-click="FoodFactory.addIceCream(item)" class="list-group-item" ng-repeat="item in iceCreamOptions"> {{item.name}} ${{item.price}} </a>
             </div>
             <h4>Ice Cream Cost:</h4>
             <h4>${{iceTotal()}}</h4>
@@ -35,9 +35,9 @@
       <div class="col-md-3">
         <div class="inner-col">
           <div ng-controller="PizzaCtrl">
-            <h4>Pizza</h4>
-            <div class="list-group" ng-repeat="item in pizzaOptions">
-              <a ng-click="FoodFactory.addPizza(item)" class="list-group-item"> {{item.name}} ${{item.price}} </a>
+            <h4><span class="label label-default">Pizza Options</span></h4><br>
+            <div class="list-group">
+              <a ng-click="FoodFactory.addPizza(item)" class="list-group-item" ng-repeat="item in pizzaOptions"> {{item.name}} ${{item.price}} </a>
             </div>
             <h4>Pizza Cost:</h4>
             <h4>${{pizzaTotal()}}</h4>
